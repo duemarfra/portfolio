@@ -1,0 +1,19 @@
+logoPortfolio
+
+text border 5px
+fuente: Michroma
+
+
+M = interno: 545454 obscuro
+    externo: 60b0f4 azúl
+
+D = interno: b4b4b4 claro
+    externo: 60b0f4 azúl
+
+    paleta de colores:
+    
+    b4b4b4 claro
+    60b0f4 azúl
+    545454 obscuro
+
+
