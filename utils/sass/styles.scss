@@ -1,3 +1,7 @@
 @use "3-generics/normalize";
+@use "5-objects/containers";
 
-body {background-color: blueviolet};
+p{
+    text-align: justify;
+    word-break: break-word;
+    }

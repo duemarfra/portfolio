@@ -1,0 +1,110 @@
+/* GRID SISTEM*/
+
+*,
+*:before,
+*::after {
+    box-sizing: border-box;
+}
+
+$cols: 12;
+$gap: 24px;
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+    
+    height: auto;
+    max-width: 2560px;
+}
+.gs\:grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: $gap / -2;
+    margin-right: $gap / -2;
+}
+
+.col-ex{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+}
+
+[class*="col-"], 
+.col {
+    width: 100%;
+    max-width: 100%;
+    padding-left: $gap /2;
+    padding-right: $gap /2;
+}
+
+@mixin grid-system($mq) {
+    .#{ $mq }{
+        flex: 1 0 0;
+    }
+    
+    @for $col from 1 to $cols {
+        .#{ $mq }-#{$col}{
+            flex: 0 0 (100%/$cols)*$col;
+            max-width: (100%/$cols)*$col;
+        }
+    }
+}
+
+@include grid-system(col);
+
+@media  screen and (max-width: 599px) {
+    @include grid-system(sm\:col)
+}
+
+@media  screen and (min-width: 600px) {
+    @include grid-system(md\:col)
+}
+
+@media  screen and (min-width: 1024px) {
+    @include grid-system(lg\:col)
+}
+
+@media  screen and (min-width: 1440px) {
+    @include grid-system(xl\:col)
+}
+
+@media  screen and (min-width: 2560px) {
+    @include grid-system(xxl\:col)
+}
+
+
+
+//! colores de prueba
+/*
+.verd, .container{
+    border: 1px solid #00ff7f;
+}
+
+.dorad, .col-ex{
+    border: 1px solid #ffd700;
+}
+
+.rosad, p{
+    border: 1px solid #c553a3;
+}
+*/
+//! esto es un contenedor de pruebas HTML
+    /*
+    <div class="container">
+
+      <div class="gs:grid">
+
+        <div class="xxl:col-4 xl:col-4 lg:col-4  md:col-2 sm:col-1">
+          <div class="col-ex">
+            <p>Lorem</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    */
+//! aquí cierra el contenedor de pruebas pruebas
+
